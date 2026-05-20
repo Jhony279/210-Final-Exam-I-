@@ -7,6 +7,7 @@
 using namespace std;
 
 const string TXTFILE = "210-final-1-SP26.txt";
+const int LOW = 0, HIGH = 15;
 
 /**
  * @brief - Description of main
@@ -48,6 +49,14 @@ int main() {
     for (const auto& entry : flightMap) {
         if (entry.second == maxFlights) {
             cout << entry.first << " " << maxFlights;
+        }
+    }
+
+    bool found = false;
+    for (const auto& entry : flightMap) {
+        if (entry.second >= LOW && entry.second <= HIGH) {
+            found = true;
+            break;
         }
     }
 
