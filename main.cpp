@@ -32,7 +32,7 @@ int main() {
     }
     file.close();
 
-    cout << "All airport traffic counts:" << endl;
+    cout << "\nAll airport traffic counts:" << endl;
     for (const auto& pair : flightMap) {
         cout << pair.first << ": " << pair.second << " flights" << endl;
     }
@@ -52,6 +52,7 @@ int main() {
             cout << entry.first << " " << maxFlights;
         }
     }
+    cout << endl << endl;
 
     printAirportInRange(flightMap, 2, 18);
     
@@ -74,4 +75,6 @@ void printAirportInRange(map <string, int>& flightMap, int low, int high) {
     if (!found) {
         cout << "No airports inside given range." << endl;
     }
+    
+    cout << endl;
 }
