@@ -7,7 +7,8 @@
 using namespace std;
 
 const string TXTFILE = "210-final-1-SP26.txt";
-const int LOW = 0, HIGH = 15;
+
+void printAirportInRange(map <string, int>&, int, int);
 
 /**
  * @brief - Description of main
@@ -52,13 +53,25 @@ int main() {
         }
     }
 
+    printAirportInRange(flightMap, 2, 18);
+    
+    printAirportInRange(flightMap, 9, 21);
+
+    return 0;
+}
+
+void printAirportInRange(map <string, int>& flightMap, int low, int high) {
+    cout << "Airports with traffic in range [" << low << ", " << high << "]:" << endl;
+    
     bool found = false;
     for (const auto& entry : flightMap) {
-        if (entry.second >= LOW && entry.second <= HIGH) {
+        if (entry.second >= low && entry.second <= high){
+            cout << entry.first << ": " << entry.second << " flights" << endl;
             found = true;
-            break;
         }
     }
 
-    return 0;
+    if (!found) {
+        cout << "No airports inside given range." << endl;
+    }
 }
