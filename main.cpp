@@ -14,11 +14,19 @@ const string TXTFILE = "210-final-1-SP26.txt";
 */
 int main() {
     
-    ifstream file(TXTFILE);  // Open the file for reading
+    string origin, destination;
+    map<string, int> flightMap;
+    
+    ifstream file(TXTFILE);
     string line;
-    if (!file.is_open()) {  // Check if the file was opened successfully
+    if (!file.is_open()) {
         cout << "Error opening file: " << TXTFILE << endl;
         return 1;
+    }
+
+    while (file >> origin >> destination) {
+        flightMap[origin]++;
+        flightMap[destination]++;
     }
 
     return 0;
