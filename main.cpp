@@ -1,5 +1,4 @@
 // COMSC-210 | Final 1 | Johnathan Perez Baltazar
-
 #include <iostream>
 #include <string>
 #include <map>
@@ -10,12 +9,7 @@ const string TXTFILE = "210-final-1-SP26.txt";
 
 void printAirportInRange(map <string, int>&, int, int);
 
-/**
- * @brief - Description of main
- * @return 
-*/
 int main() {
-    
     string origin, destination;
     map<string, int> flightMap;
     
@@ -39,7 +33,6 @@ int main() {
     cout << endl;
 
     int maxFlights = 0;
-
     for (const auto& entry : flightMap) {
         if (entry.second > maxFlights) {
             maxFlights = entry.second;
@@ -55,7 +48,6 @@ int main() {
     cout << endl << endl;
 
     printAirportInRange(flightMap, 2, 18);
-    
     printAirportInRange(flightMap, 9, 21);
 
     return 0;
