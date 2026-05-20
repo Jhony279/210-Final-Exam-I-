@@ -30,9 +30,22 @@ int main() {
     }
     file.close();
 
+    cout << "All airport traffic counts:" << endl;
     for (const auto& pair : flightMap) {
         cout << pair.first << ": " << pair.second << " flights" << endl;
     }
+
+    int maxFlights = 0;
+
+    for (const auto& entry : flightMap) {
+        if (entry.second > maxFlights) {
+            maxFlights = entry.second;
+        }
+    }
+
+    cout << "Busiest airport(s) with count " << maxFlights << ": ";
+"
+    for 
 
     return 0;
 }
