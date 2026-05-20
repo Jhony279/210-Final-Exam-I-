@@ -28,6 +28,11 @@ int main() {
         flightMap[origin]++;
         flightMap[destination]++;
     }
+    file.close();
+
+    for (const auto& pair : flightMap) {
+        cout << pair.first << ": " << pair.second << " flights" << endl;
+    }
 
     return 0;
 }
